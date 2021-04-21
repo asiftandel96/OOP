@@ -60,6 +60,7 @@ class America:
     def type(self):
         print('American people love their space and are really ambitious')
 
+
 print()
 obj_ind = India()
 obj_us = America()
@@ -69,3 +70,41 @@ for country in (obj_ind, obj_us):
     country.language()
     country.type()
     print()
+
+"""There are four ways of implementing Polymorphism in Python:
+
+1.Duck Typing
+2.Method Overloading
+3.Operator Overloading
+4.Method Overriding
+
+"""
+
+"""1. Duck Typing:- Duck typing is a concept that says that the “type” of the object is a matter of 
+concern only at runtime and you don’t need to explicitly mention the type of the object before you perform any kind 
+of operation on that object, unlike normal typing where the suitability of an object is determined by its type. 
+
+In Python, we have the concept of Dynamic typing i.e we can mention the type of variable/object later. The idea is 
+that you don’t need a type in order to invoke an existing method on an object if a method is defined on it, 
+you can invoke it. """
+
+print('--------DUCK TYPING----------')
+class Geeks1:
+    def code(self, ide):
+
+        ide.execute()
+
+
+class Geeks2:
+
+    def execute(self):
+        print('GeeksforGeeks is the best platform for learning')
+
+
+ide = Geeks2()
+
+G1 = Geeks1()
+
+G1.code(ide)
+
+

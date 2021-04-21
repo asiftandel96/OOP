@@ -11,7 +11,6 @@ print(headline("use mypy", centered=True))
 """This is essentially the same code you saw earlier: the definition of headline() and two examples that are using 
 it. """
 
-
 """Pros and Cons The previous section gave you a little taste of what type checking in Python looks like. You also 
 saw an example of one of the advantages of adding types to your code: type hints help catch certain errors. Other 
 advantages include: 
@@ -39,3 +38,19 @@ comments in Python 2.7. Still, improvements like variable annotations and postpo
 that you’ll have a better experience doing type checks using Python 3.6 or even Python 3.7. 
 
 Type hints introduce a slight penalty in start-up time. If you need to use the typing module the import time may be significant, especially in short scripts."""
+
+"""You are also allowed to write each argument on a separate line with its own annotation:"""
+
+
+def headline_1(
+        text,  # type str
+        width=80,  # type int
+        fill_char='-'  # type str
+):  # type(...) >- str
+
+    return f"{text.title()}".center(width, fill_char)
+
+
+print(headline_1("Type Comment Work", width=40))
+
+

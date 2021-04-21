@@ -7,7 +7,7 @@ class AsDictionaryMixin:
         return {
             prop: self._represent(value)
             for prop, value in self.__dict__.items()
-            if self._is_internal(prop)
+            if not self._is_internal(prop)
         }
 
     def _represent(self, value):
@@ -17,9 +17,11 @@ class AsDictionaryMixin:
                 return value.to_dict()
             else:
                 return str(value)
+        else:
+            return value
 
-    def is_internal(self, prop):
-        return prop.startwith('_')
+    def _is_internal(self, prop):
+        return prop.startswith('_')
 
 
 """The AsDictionaryMixin class exposes a .to_dict() method that returns the representation of itself as a dictionary. The method is implemented as a dict comprehension that says, “Create a dictionary mapping prop to value for each item in self.__dict__.items() if the prop is not internal.”

@@ -2,6 +2,7 @@
 from Productivity_Composition import ProductivitySystem
 from hr_Composition import PayrollSystem
 from Contacts_Composition import AddressBook
+from Representation_Mixin import AsDictionaryMixin
 
 
 class EmployeeDatabase:
@@ -59,24 +60,24 @@ It exposes an .employees property that returns the list of employees. The Employ
 """
 
 
-class Employee:
+class Employee(AsDictionaryMixin):
 
     def __init__(self, id, name, address, role, payroll):
         self.id = id
         self.name = name
         self.address = address
-        self.role = role
-        self.payroll = payroll
+        self._role = role
+        self._payroll = payroll
 
     def work(self, hours):
-        duties = self.role.perform_duties(hours)
+        duties = self._role.perform_duties(hours)
         print(f'Employee {self.id} - {self.name}:')
         print(f'- {duties}')
         print('')
-        self.payroll.track_hours(hours)
+        self._payroll.track_hours(hours)
 
     def calculate_payroll(self):
-        return self.payroll.calculate_payroll()
+        return self._payroll.calculate_payroll()
 
 
 """The Employee class is initialized with the id, name, and address attributes. It also requires the productivity 

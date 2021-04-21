@@ -31,7 +31,7 @@ class Employee(AsDictionaryMixin):
         print(f'Employee {self.id} - {self.name}:')
         print(f'-{duties}')
         print(' ')
-        self._payroll.track_work(hours)
+        self._payroll.track_hours(hours)
 
     def calculate_payroll(self):
         return self._payroll.calculate_payroll()

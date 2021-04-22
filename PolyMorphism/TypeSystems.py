@@ -1,12 +1,17 @@
-"""Type Systems
-All programming languages include some kind of type system that formalizes which categories of objects it can work with and how those categories are treated. For instance, a type system can define a numerical type, with 42 as one example of an object of numerical type.
+"""Type Systems All programming languages include some kind of type system that formalizes which categories of
+objects it can work with and how those categories are treated. For instance, a type system can define a numerical
+type, with 42 as one example of an object of numerical type.
 
 Dynamic Typing
-Python is a dynamically typed language. This means that the Python interpreter does type checking only as code runs, and that the type of a variable is allowed to change over its lifetime. The following dummy examples demonstrate that Python has dynamic typing:
+Python is a dynamically typed language. This means that the Python interpreter does type checking only as code runs,
+and that the type of a variable is allowed to change over its lifetime.
+ The following dummy examples demonstrate that Python has dynamic typing:
 
 """
 
 import mypy
+
+
 def Type_checking():
     if False:
         return 1 + "two"  # This line never runs, so no TypeError is raised"

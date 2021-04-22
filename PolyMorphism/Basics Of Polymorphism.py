@@ -89,9 +89,10 @@ that you don’t need a type in order to invoke an existing method on an object 
 you can invoke it. """
 
 print('--------DUCK TYPING----------')
+
+
 class Geeks1:
     def code(self, ide):
-
         ide.execute()
 
 
@@ -106,5 +107,3 @@ ide = Geeks2()
 G1 = Geeks1()
 
 G1.code(ide)
-
-

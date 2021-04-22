@@ -1,7 +1,9 @@
-"""Annotations
-Annotations were introduced in Python 3.0, originally without any specific purpose. They were simply a way to associate arbitrary expressions to function arguments and return values.
+"""Annotations Annotations were introduced in Python 3.0, originally without any specific purpose. They were simply a
+way to associate arbitrary expressions to function arguments and return values.
 
-Years later, PEP 484 defined how to add type hints to your Python code, based off work that Jukka Lehtosalo had done on his Ph.D. project—Mypy. The main way to add type hints is using annotations. As type checking is becoming more and more common, this also means that annotations should mainly be reserved for type hints.
+Years later, PEP 484 defined how to add type hints to your Python code, based off work that Jukka Lehtosalo had done
+on his Ph.D. project—Mypy. The main way to add type hints is using annotations. As type checking is becoming more and
+more common, this also means that annotations should mainly be reserved for type hints.
 
 The next sections explain how annotations work in the context of type hints."""
 
@@ -67,15 +69,16 @@ nothing: str
 
 """Since no value was assigned to nothing, the name nothing is not yet defined."""
 
-# Type Commenta
+# Type Comment
 """Type Comments As mentioned, annotations were introduced in Python 3, and they’ve not been backported to Python 2. 
 This means that if you’re writing code that needs to support legacy Python, you can’t use annotations. 
 
-Instead, you can use type comments. These are specially formatted comments that can be used to add type hints compatible with older code. To add type comments to a function you do something like this:"""
+Instead, you can use type comments. These are specially formatted comments that can be used to add type hints 
+compatible with older code. To add type comments to a function you do something like this: """
 
 
 def circumference_type(radius):
-    type: (float) > - float
+    type: float > - float
 
     return 2 * math.pi * radius
 
@@ -99,3 +102,17 @@ def headline_type(text, width=80, fill_char='-'):
 
 
 print(headline_type("Use this type comments", width=40))
+
+"""So, Type Annotations or Type Comments? Should you use annotations or type comments when adding type hints to your 
+own code? In short: Use annotations if you can, use type comments if you must. 
+
+Annotations provide a cleaner syntax keeping type information closer to your code. They are also the officially 
+recommended way of writing type hints, and will be further developed and properly maintained in the future. 
+
+Type comments are more verbose and might conflict with other kinds of comments in your code like linter directives. 
+However, they can be used in code bases that don’t support annotations. 
+
+There is also hidden option number three: stub files. You will learn about these later, when we discuss adding types 
+to third party libraries. 
+
+Stub files will work in any version of Python, at the expense of having to maintain a second set of files. In general, you only want to use stub files if you can’t change the original source code."""

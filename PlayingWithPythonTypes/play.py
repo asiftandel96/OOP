@@ -46,3 +46,6 @@ def black_hole(player_name: str) -> NoReturn:
 
 
 """Since black_hole() always raises an exception, it will never return properly."""
+
+
+

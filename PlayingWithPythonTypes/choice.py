@@ -11,8 +11,8 @@ def choose(item: Sequence[Any]) -> Any:
 return one such item of any type. Unfortunately, this is not that useful. Consider the following example: """
 
 names = ['Gukka', 'Jukka', 'Abido']
-reveal_type(names)
+#reveal_type(names)
 
 name = choose(names)
 
-reveal_type(name)
+#reveal_type(name)

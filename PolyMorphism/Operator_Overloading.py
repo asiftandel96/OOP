@@ -38,12 +38,14 @@ class Student2:
     print()
 
     def __init__(self, m1, m2):
-        self.m1 = m1
-        self.m2 = m2
+        # self.__m1=m1 # Private access modifier
+        self._m1 = m1  # Protected access modifier
+        self._m2 = m2
 
     def __add__(self, other):
-        m1 = self.m1 - other.m1
-        m2 = self.m2 - other.m2
+        # m1=self.__m1 - other.__m1
+        m1 = self._m1 - other._m1
+        m2 = self._m2 - other._m2
         s3 = Student2(m1, m2)
         return s3
 
@@ -51,6 +53,9 @@ class Student2:
 a1 = Student2(12, 12)
 a2 = Student2(29, 28)
 a3 = a1 + a2
-print(a3.m1)
+# a3.__m1 cannot be access as it is private
+print(a3._m1)
 print()
-print(a3.m2)
+print(a3._m2)
+
+print(dir(a1))

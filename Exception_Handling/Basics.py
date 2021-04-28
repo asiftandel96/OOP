@@ -51,4 +51,5 @@ def Ex():
         print('The age is not in the range and you cannot apply for exams')
 
 
-Ex()
+if __name__ == "__main__":
+    Ex()

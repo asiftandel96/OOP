@@ -1,6 +1,7 @@
 """-----------------------------------ITERATORS CONCEPTS--------------------------------"""
 
 # This library is the wrapper for numpy,pandas,matplotlib and seaborn
+import self as self
 """
 from pyforest import *
 
@@ -51,9 +52,8 @@ if __name__ == "__main__":
     a.my_iterator()
 """
 
-
 # Some Basic Example to understand Iterators in depth
-
+"""
 class Addition:
     def __init__(self, a: int, b: int) -> int:
         try:
@@ -67,11 +67,11 @@ class Addition:
             pass
 
     def __iter__(self):
-        """The __iter__() function returns an
+        '''The __iter__() function returns an
         iterator for the given object (array, set, tuple etc. or custom objects).
         It creates an object that can be accessed one element at a time using __next__()
         function, which generally comes in handy when dealing with loops.
-        """
+        '''
         try:
 
             self.result = self.a + self.b
@@ -90,3 +90,61 @@ if __name__ == "__main__":
     print(Addition_no.__iter__())
     print(Addition_no.__iter__())
     Addition_no.__next__()
+
+"""
+
+# Here we are taking a example of power of 2 in each iteration.Power exponent start from zero up to set numbers
+"""
+class PowTwo:
+    '''Class to Implement an Iterator of power of two  '''
+
+    def __init__(self, max):
+        self.max = max
+
+    def __iter__(self):
+        self.n = 0
+        return self
+
+    def __next__(self):
+        if self.n <= self.max:
+            result = 2 ** self.n
+            self.n += 1
+            return result
+        else:
+            raise StopIteration
+
+
+if __name__ == "__main__":
+
+    numbers = PowTwo(10)
+    i = iter(numbers)
+    for item in numbers:
+        print(item)
+        
+"""
+
+
+# Now Using Some Example to showcase iterators
+class TopTen:
+
+    def __init__(self):
+        self.n = 1
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.n < 10:
+            val = self.n
+            self.n += 1
+            return val
+        else:
+            raise StopIteration
+
+
+if __name__ == "__main__":
+
+    TopTen_no = TopTen()
+    a = iter(TopTen_no)
+    for i in a:
+        print(i, end=' ')

@@ -1,4 +1,4 @@
-# Building Generators With Generator ExpressionsBuilding Generators With Generator Expressions
+# Building Generators With Generator Expressions
 
 # Like list comprehensions, generator expressions allow you to quickly create a generator object in just a few lines
 # of code. They’re also useful in the same cases where list comprehensions are used, with an added benefit: you can

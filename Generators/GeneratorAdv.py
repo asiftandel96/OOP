@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Building Generators With Generator Expressions
 
 # Like list comprehensions, generator expressions allow you to quickly create a generator object in just a few lines
@@ -135,7 +135,7 @@ while True:
     except StopIteration:
         break
     print(letter)
-=======
+
 # Building Generators With Generator Expressions
 
 # Like list comprehensions, generator expressions allow you to quickly create a generator object in just a few lines
@@ -272,4 +272,4 @@ while True:
     except StopIteration:
         break
     print(letter)
->>>>>>> be9a89284dfe18745ab25cf366b2d1b9af726c88
+

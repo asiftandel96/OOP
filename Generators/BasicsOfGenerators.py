@@ -1,4 +1,3 @@
-"""
 class BasicThings:
     def __init__(self):
         pass
@@ -29,10 +28,10 @@ if __name__ == "__main__":
     print("Row count =",row_count)
     print('The Execution is done')
 
-"""
+
 
 # Creating A Generator and Using Class
-"""
+
 class GeneratorO:
     def __init__(self):
         pass
@@ -51,16 +50,15 @@ if __name__ == "__main__":
 
 print('The row count =', row_count)
 
-"""
 
-"""Example 2: Generating an Infinite Sequence Let’s switch gears and look at infinite sequence generation. In Python, 
-to get a finite sequence, you call range() and evaluate it in a list context: """
-"""
+
+#Example 2: Generating an Infinite Sequence Let’s switch gears and look at infinite sequence generation. In Python,
+#to get a finite sequence, you call range() and evaluate it in a list context:
+
 a = range(0, 5)
 print(list(a))
-"""
 
-"""
+
 def infinite_sequence():
     num = 0
     while True:
@@ -74,8 +72,6 @@ def infinite_sequence():
 gen = infinite_sequence()
 print(next(gen))
 print(next(gen))
-
-"""
 
 
 class Palindrome:
@@ -115,3 +111,37 @@ if __name__ == "__main__":
         pal = a.is_palindrome(i)
         if pal:
             print(pal)
+
+"""Normal Function and Generator Function in same class"""
+
+"""Great Example"""
+
+
+class NorGenDif:
+
+    def __init__(self):
+        pass
+
+    @staticmethod
+    def Add_Return():
+        """Normal Function"""
+        a = 5
+        b = 6
+        result = a + b
+        return 'The normal function result =', result
+
+    @staticmethod
+    def Add_Generator():
+        """Generator Function"""
+        c = 5
+        d = 6
+        result_1 = c + d
+        yield 'The generator function =', result_1
+
+
+if __name__ == "__main__":
+    a = NorGenDif()
+    print(a.Add_Return())
+    print(a.Add_Generator().__next__())
+
+

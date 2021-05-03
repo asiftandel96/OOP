@@ -17,4 +17,15 @@ print(a)
 
 """
 
+"""This is A Python Closure Method """
 
+
+def outer():
+    print('Welcome to Data Science Program')
+
+    def inner():
+        print('This is A Supervised Learning Approach')
+    inner()
+
+
+outer()
